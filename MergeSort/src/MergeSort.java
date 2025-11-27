@@ -29,10 +29,13 @@ public class MergeSort {
         for (int i = 0; i < n2; i++) {
             a_dx[i] = this.arr[mid + i + 1];
         }
-        int o_i = sx;
-        int dx_i = 0;
-        int sx_i = 0;
 
+        //indici per i 3 array
+        int o_i = sx; //array "Padre"
+        int dx_i = 0; //array destro
+        int sx_i = 0; //array sinistro
+
+        //Unisce gli elementi dell'array
         while (sx_i < n1 && dx_i < n2) {
             if (a_sx[sx_i] <= a_dx[dx_i]) {
                 arr[o_i] = a_sx[sx_i];
@@ -44,12 +47,13 @@ public class MergeSort {
             o_i++;
         }
 
+        //copia gli elementi rimasti nel sub-array sinistro
         while(sx_i < n1){
             arr[o_i] = a_sx[sx_i];
             sx_i++;
             o_i++;
         }
-
+        //copia gli elementi rimasti nel sub-array destro
         while(dx_i < n2){
             arr[o_i] = a_dx[dx_i];
             dx_i++;
