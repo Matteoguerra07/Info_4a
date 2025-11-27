@@ -33,14 +33,15 @@ public class Main {
     }
 
     public static void stampaMenu (){
-        System.out.println("\n▶----------------------------◀");
-        System.out.println("|   Algoritmo Merge Sort     |");
+        System.out.println("\n");
+        System.out.println("▶----------------------------◀");
+        System.out.println("|    Algoritmo Merge Sort    |");
         System.out.println("▶----------------------------◀");
         System.out.println("\nSelezionare cosa si vuole fare: ");
-        System.out.println("\t🔸Aggiungere gli elementi all'array.");
-        System.out.println("\t🔸Visualizzare l'array.");
-        System.out.println("\t🔸Ordinare l'array.");
-        System.out.println("\t🔸Uscire dal programma.");
+        System.out.println("\t1️⃣Aggiungere gli elementi all'array.");
+        System.out.println("\t2️⃣Visualizzare l'array.");
+        System.out.println("\t3️⃣Ordinare l'array.");
+        System.out.println("\t4️⃣Uscire dal programma.");
     }
 
     public static void aggiungiElementi (int[]arr){
