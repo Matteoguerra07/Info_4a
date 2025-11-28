@@ -1,11 +1,15 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        ArrayList<Integer> lista = new ArrayList<Integer>();
+
+
         Scanner input= new Scanner(System.in);
-        System.out.println("Inserire dimensione dell'array: ");
-        int n = input.nextInt();
-        int[] arr = new int[n];
+        //System.out.println("Inserire dimensione dell'array: ");
+        //int n = input.nextInt();
+        //int[] arr = new int[n];
         boolean running = true;
 
         while (running) {
@@ -15,12 +19,15 @@ public class Main {
 
             switch (opzione) {
                 case 1:
-                    aggiungiElementi(arr);
+                    lista.add(input.nextInt());
+
+                    //aggiungiElementi(arr);
                     break;
                 case 2:
-                    stampaArray(arr);
+                    stampaArray(lista);
                     break;
                 case 3:
+                    int[] arr = convertiListaArray(lista);
                     MergeSort toSort = new MergeSort(arr);
                     toSort.divide(0, arr.length - 1);
                     break;
@@ -51,11 +58,21 @@ public class Main {
         }
     }
 
-    public static void stampaArray(int[] arr) {
 
-        for (int i = 0; i < arr.length; i++) {
-            System.out.print(arr[i] + " ");
+
+    public static void stampaArray(ArrayList<Integer> lista) {
+
+        for (int i = 0; i < lista.size(); i++) {
+            System.out.print(lista.get(i) + " ");
         }
         System.out.println();
+    }
+
+    public static int[] convertiListaArray (ArrayList<Integer> lista){
+        int[] array = new int[lista.size()];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = lista.get(i);
+        }
+        return array;
     }
 }
